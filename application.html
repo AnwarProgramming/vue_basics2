@@ -10,15 +10,18 @@
 </head>
 
 <body>
+
     <div id="app">
-        Your name : <input type="text" v-model="visitor_name"><br>
-        Your message : <input type="text" v-model="visitor_message"><br>
-        <button v-on:click="sayHi">Say Hi</button> <!--v-on:click="sayHi" here sayHi is a method -->
+        <h3>Total messages received until now : {{ global_count}}</h3>
+        <table>
+            <tr>
+                <td><message-board title="Thej's Board" v-on:add-to-global-total="count_global"></message-board></td>
+                <td><message-board title="Fatima's Board"v-on:add-to-global-total="count_global"></message-board></td>
+                <td><message-board title="Ruth's Board"v-on:add-to-global-total="count_global"></message-board></td>
+            </tr>
+        </table>
 
-        <ul>
-            <li v-for="message in messages">{{message["visitor_name"]}} : {{message["visitor_message"]}}</li>
-        </ul>
-
+        
     </div>
     <script type="text/javascript" src="application.js"></script>
 </body>
